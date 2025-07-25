@@ -8,7 +8,7 @@ import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 const Navbar = () => {
   return (
     <div className={styles.container}>
-      <Link href="/" className={styles.logo}>lamamaia</Link>
+      <Link href="/" className={styles.logo}>lamamia</Link>
       <div className={styles.link}>
         <DarkModeToggle />
         {links.map((link) =>(
