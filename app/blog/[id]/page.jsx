@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 
 async function getData(id) {
   const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
-    cache: "no-store",
+    cache: "force-cache",
   });
 
   if (!res.ok) {
@@ -37,19 +37,19 @@ const BlogPost = async ({ params }) => {
           </p>
           <div className={styles.author}>
             <Image
-              src={data.img}
-              alt=""
+              src={data.image}
+              alt="avatar image"
               width={40}
               height={40}
               className={styles.avatar}
             />
-            <span className={styles.username}>{data.username}</span>
+            <span className={styles.username}>{data.userName}</span>
           </div>
         </div>
         <div className={styles.imageContainer}>
           <Image
-            src={data.img}
-            alt=""
+            src={data.image}
+            alt="blog image"
             fill={true}
             className={styles.image}
           />
@@ -57,7 +57,7 @@ const BlogPost = async ({ params }) => {
       </div>
       <div className={styles.content}>
         <p className={styles.text}>
-         {data.content}
+          {data.content}
         </p>
       </div>
     </div>

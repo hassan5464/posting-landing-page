@@ -2,7 +2,16 @@ import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
 import Button from '@/components/button/Button'
+
+
+
+export const metadata ={
+  title: "Lamamia Contact page",
+  description: "This is the contact page of Lamamia",
+}
+
 const Contact = () => {
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Let's Keep in Touch</h1>
