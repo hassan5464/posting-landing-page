@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
+
 const {Schema} =mongoose;
+
 const userSchema = new Schema({
   name: {
     type: String,
@@ -21,5 +23,5 @@ const userSchema = new Schema({
 {timesramps: true}
 );
 
-
-export default mongoose.models("User", userSchema)
+const user = mongoose.models.Post || mongoose.model("User", userSchema)
+export default user;
