@@ -4,7 +4,7 @@ import connect from "@/utils/db"
 
 
 
-export const GET = async (request, {params})=>{
+export const GET = async ({params})=>{
   //fetch data from database
   const { id } = params;
   try{

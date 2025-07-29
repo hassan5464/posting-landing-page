@@ -5,18 +5,19 @@ import Link from 'next/link';
 
 
 
-async function getData(){
-    const res = await fetch("http://localhost:3000/api/posts");
-
-    // If you get an error like "FetchError: invalid json response body at https://jsonplaceholder.typicode.com/posts reason: Unexpected token < in JSON at position 0"
-    if(!res.ok){
+async function getData() {
+  try {
+    const res = await fetch("http://localhost:3000/api/posts", { cache: "no-store" });
+    if (!res.ok) {
       throw new Error("Failed to fetch data");
     }
     const postes = await res.json();
-
     return postes;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return [];
   }
-
+}
 
 
 

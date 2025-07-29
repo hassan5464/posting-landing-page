@@ -7,7 +7,14 @@ const Login = () => {
   return (
     <div className={styles.container}>
       
-      <button onClick={() => signIn("go")}>Login with Google</button>
+      <form
+          action={async () => {
+            
+            await signIn()
+          }}
+        >
+          <button type="submit">Sign in</button>
+      </form>
     </div>
   )
 }
