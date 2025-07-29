@@ -23,5 +23,5 @@ const userSchema = new Schema({
 {timesramps: true}
 );
 
-const user = mongoose.models.Post || mongoose.model("User", userSchema)
-export default user;
+const User = mongoose.models.Post || mongoose.model("User", userSchema)
+export default User;
