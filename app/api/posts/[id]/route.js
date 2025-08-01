@@ -4,16 +4,17 @@ import connect from "@/utils/db"
 
 
 
-export const GET = async ({params})=>{
+export const GET = async (request, {params})=>{
   //fetch data from database
   const { id } = params;
   try{
     await connect()
     const posts = await Post.findById(id);
+    
     return new NextResponse(JSON.stringify(posts), {status: 200})
   }catch(error){
-
-    return new NextResponse("Database Error", {status: 500})
+    NextResponse
+    return new NextResponse("Database Errorrrrrr", {status: 500})
   }
 
 }
