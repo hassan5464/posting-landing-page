@@ -18,3 +18,19 @@ export const GET = async (request)=>{
 
 }
 
+
+export const POST = async (request)=>{
+  //fetch data from database
+
+  const body = await request.json();
+  const newPost= new Post(body);
+  try{
+    await connect();
+    await newPost.save();
+    return new NextResponse("Post has been created", {status: 201});
+  }catch(error){
+    return new NextResponse("Database Errorr", {status: 550});
+  }
+
+}
+
