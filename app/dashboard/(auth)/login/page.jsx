@@ -38,15 +38,10 @@ const handleSubmit = async(e) =>{
         </button>
       </form>
 
-      <form
-        action={async () => {
-          await signIn();
-        }}
-      >
         <button type="submit" style={{cursor: "pointer"}} onClick={() => signIn("google")}>
           Login with Google
         </button>
-      </form>
+      
     </div>
   );
 };
