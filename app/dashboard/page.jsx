@@ -60,7 +60,7 @@ const Dashboard = () => {
 
 
 
- if(session.status === "authenticated"){
+  if(session.status === "authenticated"){
   
     return (
       <div className={styles.container}>
